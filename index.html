@@ -1,0 +1,281 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGIC LIBRARY</title>
+    <style>
+        body {
+            background: url(fon1.jpg) center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+			background-repeat: no-repeat;
+        }
+         .navbar {
+            background: transparent;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar a, .register-btn {
+            color: black;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            cursor: pointer;
+            background: green;
+			opacity: .7;
+            border: none;
+            font-size: 16px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: rgba(52, 152, 219, 0.7);
+            color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropbtn:hover, .dropbtn:focus {
+            opacity: .3;
+        }
+		 .dropbtn:hover, .register-btn:focus {
+            opacity: .3;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(241, 241, 241, 0.8);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 2000;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(221, 221, 221, 0.7);
+        }
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .footer-nav {
+            background: transparent;
+            padding: 0px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 1001;
+        }
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        .register-form {
+            display: none;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 50px auto;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        .register-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .register-form button {
+            background: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .register-form button:hover {
+            background: #2980b9;
+        }
+		.spaced-text {
+    word-spacing: 20px;
+}
+    </style>
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <div class="navbar">
+        <a href="index.html">HomePage</a>
+        <button class="register-btn" onclick="toggleRegisterForm(event)">Registration</button>
+        <div class="dropdown">
+            <button class="dropbtn">Author's Corner</button>
+            <div class="dropdown-content">
+			<a href="Author's Corner.html">Author's Corner</a>
+                <a href="Three from the Forest.html">"Three from the Forest"</a>
+                <a href="Drizzt Do’Urden.html">Drizzt Do’Urden</a>
+                <a href="Sheriff.html">Sheriff</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Personal Page</button>
+            <div class="dropdown-content">
+                <a href="My Library.html">My Library</a>
+                <a href="My details.html">My details</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Forum</button>
+            <div class="dropdown-content">
+                <a href="Forum.html">Forum</a>
+                <a href="In development.html">Rules</a>
+                <a href="In development.html">News</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Links</button>
+            <div class="dropdown-content">
+                <a href="Where Buy book.html">Where Buy book</a>
+                <a href="Where reading.html">Where reading</a>
+                <a href="Useful links.html">Useful links</a>
+            </div>
+        </div>
+		<select id="language-selector">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="ukr">Українській</option>
+    </select>
+    </div>
+	<div id="register" class="register-form">
+        <h2>Register</h2>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    
+    <!-- Main content section -->
+    <div class="content">
+	<blockquote  style="font-family:verdana;font-size: 60;color:#8A2BE2 ;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;"data-lang="title" >M A G I C&nbsp;&nbsp; L I B R A R Y </blockquote >
+  
+        
+        <h2 style="font-family:Georgia; color:#3CB371;
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: #000000;"data-lang="description">
+ <center>
+ <strong>
+ Welcome to the MAGIC LIBRARY website. Here you will find interesting articles, books, and You can also create your own "library" - a list of what you have read, are reading, or want to read, because I think everyone has encountered the problem of not remembering whether you have read this book, or which book in the series you stopped at, this site will help you.!
+		</h2>
+    </div>
+    
+    <!-- Footer navigation bar -->
+    <div class="footer-nav">
+        <a href="Index.html"> <img src="Home.png" width="95" height="55" width="95"></a>
+        <a href="http://www.linkedin.com/in/dmytro-kasimov-772a1b281">
+  <img src="Ln.png" width="85" height="45" width="85">
+</a>
+        <a href="http://www.facebook.com/profile.php?id=100083754332377">
+  <img src="Face.png" width="55" height="55" width="55">
+</a>
+        <a href="http://www.instagram.com/white.lord.7?gsh=ZTBpZ3lqNjRqdGtx">
+  <img src="Inst.png" width="55" height="55" width="55">
+</a>
+    </div>
+  <script>
+        document.addEventListener("click", function(event) {
+            let form = document.getElementById("register");
+            let isRegisterBtn = event.target.classList.contains("register-btn");
+            if (!form.contains(event.target) && !isRegisterBtn) {
+                form.style.display = "none";
+            }
+        });
+        function toggleRegisterForm(event) {
+            event.stopPropagation();
+            let form = document.getElementById("register");
+            form.style.display = (form.style.display === "block") ? "none" : "block";
+        }
+        document.querySelectorAll('.dropbtn').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                let parentDropdown = this.parentElement;
+                parentDropdown.classList.toggle('active');
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    if (dropdown !== parentDropdown) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+        });
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+    </script>
+	<script>
+    const translations = {
+        en: {
+            title: "M A G I C &nbsp;&nbsp; L I B R A R Y",
+            description: "Welcome to the MAGIC LIBRARY website. Here you will find interesting articles, books, and You can also create your own library - a list of what you have read, are reading, or want to read, because I think everyone has encountered the problem of not remembering whether you have read this book, or which book in the series you stopped at, this site will help you.!"
+        },
+        ru: {
+            title: "М А Г И Ч Е С К А Я <br> Б И Б Л И О Т Е К А",
+            description: "Добро пожаловать на сайт MAGIC LIBRARY. Здесь вы найдете интересные статьи, книги, а также сможете создать свою библиотеку - список того, что вы прочитали, читаете или хотите прочитать, ведь я думаю каждый сталкивался с проблемой не помнить, читали ли вы эту книгу, или на какой книге серии остановились, этот сайт вам поможет!"
+        },
+        ukr: {
+            title: "М А Г І Ч Н А &nbsp;&nbsp; Б І Б Л І О Т Е К А",
+            description: "Ласкаво просимо на сайт MAGIC LIBRARY. Тут ви знайдете цікаві статті, книги, а також можете створити власну бібліотеку - список того, що ви прочитали, читаєте або хочете прочитати, тому що я думаю кожен стикався з проблемою не пам'ятати, чи читали ви цю книгу, або на якій книзі з серії зупинилися, цей сайт вам допоможе!"
+        }
+    };
+
+    document.getElementById("language-selector").addEventListener("change", function() {
+        let lang = this.value;
+        document.documentElement.lang = lang; // Меняем атрибут lang у <html>
+
+        // Перебираем все элементы с data-lang и обновляем их содержимое
+        document.querySelectorAll("[data-lang]").forEach(element => {
+            let key = element.getAttribute("data-lang");
+            element.innerHTML = translations[lang][key]; // Используем innerHTML, чтобы сохранить &nbsp;
+        });
+    });
+</script>
+</body>
+</html>
