@@ -5,7 +5,7 @@
     <title></title>
     <style>
         body {
-            background: url(fon2.webp) center center fixed;
+            background: url(fon-knigi-42.jpg) center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -82,7 +82,7 @@
         .footer-nav {
             background: transparent;
             padding: 0px;
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
             display: flex;
@@ -128,12 +128,30 @@
         .register-form button:hover {
             background: #2980b9;
         }
+		
+		 .forum-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(132, 211, 216, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            background: #e9ecef;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .message strong {
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <!-- Top navigation bar -->
     <div class="navbar">
-        <a href="Index.html">HomePage</a>
+        <a href="index.html">HomePage</a>
         <button class="register-btn" onclick="toggleRegisterForm(event)">Registration</button>
         <div class="dropdown">
             <button class="dropbtn">Author's Corner</button>
@@ -155,8 +173,8 @@
             <button class="dropbtn">Forum</button>
             <div class="dropdown-content">
                 <a href="Forum.html">Forum</a>
-                <a href="#">Rules</a>
-                <a href="#">News</a>
+                <a href="In development.html">Rules</a>
+                <a href="In development.html">News</a>
             </div>
         </div>
         <div class="dropdown">
@@ -185,25 +203,26 @@
     
     <!-- Main content section -->
     <div>
+	<br>
 	<blockquote style="font-family:verdana;font-size: 60;color:#8A2BE2;
   -webkit-text-stroke-width: 0.2px; 
-  -webkit-text-stroke-color: #FF0000;" >Author's&nbsp;&nbsp; Corner </blockquote>
+  -webkit-text-stroke-color: #FF0000;" >Forum </blockquote>
   
         
-        <h2 style="font-family:Georgia; font-size:23px; color:#000000;
-  -webkit-text-stroke-width: 0.1px;
-  -webkit-text-stroke-color: #FF0000;">
- <center>
- <strong>
- Welcome.Here will be my thoughts, My impressions<br>  Here I will describe my favorite books and book series.		
- </h2>
- <h2>
-
-<a href="Three from the Forest.html">"Three from the Forest"</a>
-<a href="#">Drizzt Do’Urden</a>
-<a href="#">Sheriff</a>
+        <div class="forum-container">
+        <h2>Forum Discussion</h2>
+        
+        <!-- Message input form -->
+        <input type="text" id="username" placeholder="Enter your name" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+        <textarea id="message" placeholder="Write a message..." style="width: 100%; padding: 8px; height: 80px;"></textarea>
+        <button onclick="postMessage()" style="width: 100%; padding: 10px; background: #007bff; color: white; border: none; cursor: pointer;">Post Message</button>
+        
+        <!-- Message display area -->
+        <div id="forum-messages">
+            <!-- Messages will be displayed here -->
+        </div>
     </div>
-    
+	
 	
     <!-- Footer navigation bar -->
      <div class="footer-nav">
@@ -251,6 +270,28 @@
                 });
             }
         });
+		function postMessage() {
+            // Get input values
+            let username = document.getElementById("username").value.trim();
+            let message = document.getElementById("message").value.trim();
+            
+            // Check if input fields are not empty
+            if (username === "" || message === "") {
+                alert("Both fields are required!");
+                return;
+            }
+            
+            // Create a new message element
+            let messageElement = document.createElement("div");
+            messageElement.classList.add("message");
+            messageElement.innerHTML = `<strong>${username}:</strong> ${message}`;
+            
+            // Append message to forum-messages div
+            document.getElementById("forum-messages").appendChild(messageElement);
+            
+            // Clear input fields
+            document.getElementById("message").value = "";
+        }
     </script>
 </body>
 </html>

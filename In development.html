@@ -133,7 +133,7 @@
 <body>
     <!-- Top navigation bar -->
     <div class="navbar">
-        <a href="index.html">HomePage</a>
+        <a href="Index.html">HomePage</a>
         <button class="register-btn" onclick="toggleRegisterForm(event)">Registration</button>
         <div class="dropdown">
             <button class="dropbtn">Author's Corner</button>
@@ -155,8 +155,8 @@
             <button class="dropbtn">Forum</button>
             <div class="dropdown-content">
                 <a href="Forum.html">Forum</a>
-                <a href="In development.html">Rules</a>
-                <a href="In development.html">News</a>
+                <a href="#">Rules</a>
+                <a href="#">News</a>
             </div>
         </div>
         <div class="dropdown">
@@ -167,7 +167,6 @@
                 <a href="Useful links.html">Useful links</a>
             </div>
         </div>
-	
 		<select id="language-selector">
         <option value="en">English</option>
         <option value="ru">Русский</option>
@@ -182,12 +181,10 @@
             <input type="password" placeholder="Password" required>
             <button type="submit">Sign Up</button>
         </form>
-    </div>
-    
- 
-	
-    <!-- Footer navigation bar -->
-    < <div class="footer-nav">
+  </div>
+  
+   <!-- Footer navigation bar -->
+    <div class="footer-nav">
         <a href="Index.html"> <img src="Home.png" width="95" height="55" width="95"></a>
         <a href="http://www.linkedin.com/in/dmytro-kasimov-772a1b281">
   <img src="Ln.png" width="85" height="45" width="85">
@@ -200,33 +197,6 @@
 </a>
     </div>
 	
-
-    
-    <script>
-        const translations = {
-            en: {
-                title: "Welcome!",
-                description: "This is a multilingual website."
-            },
-            ru: {
-                title: "Добро пожаловать!",
-                description: "Это многоязычный сайт."
-            },
-            es: {
-                title: "¡Bienvenido!",
-                description: "Este es un sitio web multilingüe."
-            }
-        };
-
-        document.getElementById("language-selector").addEventListener("change", function() {
-            let lang = this.value;
-            document.documentElement.lang = lang; // Меняем атрибут lang у <html>
-            document.querySelectorAll("[data-lang]").forEach(element => {
-                let key = element.getAttribute("data-lang");
-                element.textContent = translations[lang][key];
-            });
-        });
-    </script>
   <script>
         document.addEventListener("click", function(event) {
             let form = document.getElementById("register");
