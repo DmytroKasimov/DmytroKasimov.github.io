@@ -163,6 +163,18 @@
 		  .tab { 
   tab-size: 10; 
 }
+
+        .editable {
+            cursor: pointer;
+        }
+        .editing {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .book-image {
+            max-width: 100px;
+            max-height: 100px;
+        }
     </style>
 </head>
 <body>
@@ -224,7 +236,7 @@
         <table class="book-table">
             <tr>
                 <td>
-                   <div class="book-container">
+                   <div class="book-container" id="bookTable">
                        <strong>&nbsp;&nbsp;In the Very Beginning (2008) </strong><br>&nbsp;Yuri Aleksandrovich Nikitin
                        <div class="book-info">
                            <img src="3inF_1.jpg" alt="Book Cover" width="100"><br>
@@ -502,9 +514,144 @@
   <img src="Inst.png" width="55" height="55" width="55">
 </a>
     </div>
-	<script>
+	 <script src="https://cdn.jsdelivr.net/npm/@octokit/rest@18.5.3/dist/index.min.js"></script>
+    <script>
+        const octokit = new Octokit({
+            auth: 'YOUR_GITHUB_PERSONAL_ACCESS_TOKEN'
+        });
+	     const owner = 'YOUR_GITHUB_USERNAME';
+        const repo = 'YOUR_REPO_NAME';
+        const path = 'books.json';
+
+        let currentUser = null;
+	    // Функція для завантаження книг користувача
+        async function loadUserBooks() {
+            try {
+                const response = await octokit.repos.getContent({
+                    owner,
+                    repo,
+                    path  });
+
+                const content = atob(response.data.content);
+                const books = JSON.parse(content);
+		    let tableHTML = '';
+                books.forEach((book, index) => {
+                    tableHTML += `
+                        <tr>
+                            <td>
+			    <div class="book-container">
+                                    <strong class="editable" data-field="title" data-index="${index}">${book.title}</strong><br>
+                                    <span class="editable" data-field="author" data-index="${index}">${book.author}</span>
+                                    <div class="book-info">
+                                        <img src="${book.imageUrl}" alt="Book Cover" class="book-image editable" data-field="image" data-index="${index}">
+                                        <p class="editable" data-field="description" data-index="${index}">${book.description}</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+			`;
+                });
+                document.getElementById('bookTable').innerHTML = tableHTML;
+                addEditListeners();
+            } catch (error) {
+                console.error('Error loading books:', error);
+            }
+        }
+	     function addEditListeners() {
+            document.querySelectorAll('.editable').forEach(element => {
+                element.addEventListener('click', function() {
+                    const field = this.dataset.field;
+                    const index = this.dataset.index;
+                    const currentValue = this.innerText;
+			 if (field === 'image') {
+                        const input = document.createElement('input');
+                        input.type = 'file';
+                        input.accept = 'image/*';
+                        input.onchange = (e) => updateImage(e, index, this);
+                        input.click();
+                    } else {
+                        const input = document.createElement('input');
+                        input.value = currentValue;
+                        input.classList.add('editing');
+                        this.innerHTML = '';
+				  this.appendChild(input);
+                        input.focus();
+
+                        input.addEventListener('blur', function() {
+                            updateField(field, index, this.value);
+                            this.parentElement.innerText = this.value;
+                        });
+
+                        input.addEventListener('keypress', function(e) {
+                            if (e.key === 'Enter') {
+                                this.blur();
+				      }
+                        });
+                    }
+                });
+            });
+        }
+
+        async function updateField(field, index, value) {
+            try {
+                const response = await octokit.repos.getContent({
+                    owner,
+			 repo,
+                    path
+                });
+
+                const content = atob(response.data.content);
+                let books = JSON.parse(content);
+
+                books[index][field] = value;
+
+                const updatedContent = btoa(JSON.stringify(books, null, 2));
+		     await octokit.repos.createOrUpdateFileContents({
+                    owner,
+                    repo,
+                    path,
+                    message: `Update ${field} for book ${index}`,
+                    content: updatedContent,
+                    sha: response.data.sha
+                });
+            } catch (error) {
+                console.error('Error updating field:', error);
+		     }
+        }
+
+        async function updateImage(event, index, imgElement) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = async function(e) {
+                const base64Image = e.target.result.split(',')[1];
+                const imagePath = `images/${file.name}`;
+		     try {
+                    await octokit.repos.createOrUpdateFileContents({
+                        owner,
+                        repo,
+                        path: imagePath,
+                        message: `Upload image for book ${index}`,
+                        content: base64Image
+                    });
+
+                    const imageUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/${imagePath}`;
+                    imgElement.src = imageUrl;
+			      await updateField('imageUrl', index, imageUrl);
+                } catch (error) {
+                    console.error('Error uploading image:', error);
+                }
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        // Завантаження книг при завантаженні сторінки
+        loadUserBooks();
+	
 	document.addEventListener("click", function(event) {
             let form = document.getElementById("register");
+	    
             let isRegisterBtn = event.target.classList.contains("register-btn");
             if (!form.contains(event.target) && !isRegisterBtn) {
                 form.style.display = "none";
