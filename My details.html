@@ -2,132 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/main.css">
     <title></title>
     <style>
         body {
-            background: url(28546.jpg) center center fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+            background: url(image/28546.jpg) center center fixed;
+           
         }
-         .navbar {
-            background: transparent;
-            overflow: visible;
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        .navbar a, .register-btn {
-            color: black;
-            text-decoration: none;
-            padding: 14px 20px;
-            display: block;
-            cursor: pointer;
-            background: green;
-			opacity: .7;
-            border: none;
-            font-size: 16px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropbtn {
-            background-color: rgba(52, 152, 219, 0.7);
-            color: black;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
-        .dropbtn:hover, .dropbtn:focus {
-            opacity: .3;
-        }
-		 .dropbtn:hover, .register-btn:focus {
-            opacity: .3;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: rgba(241, 241, 241, 0.8);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 2000;
-            top: 100%;
-            left: 0;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: rgba(221, 221, 221, 0.7);
-        }
-        .dropdown.active .dropdown-content {
-            display: block;
-        }
-        .content {
-            margin-top: 80px;
-            padding: 20px;
-        }
-        .footer-nav {
-            background: transparent;
-            padding: 0px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 1001;
-        }
-        .footer-nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-            display: block;
-        }
-        .register-form {
-            display: none;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            margin: 50px auto;
-            width: 300px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2000;
-        }
-        .register-form input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .register-form button {
-            background: #3498db;
-            color: white;
-            padding: 10px;
-            border: none;
-            width: 100%;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .register-form button:hover {
-            background: #2980b9;
-        }
+        
 		 .container {
             max-width: 600px;
             margin: 50px auto;
@@ -172,12 +54,12 @@
 <body>
     <!-- Top navigation bar -->
     <div class="navbar">
-       <a href="index.html">HomePage</a>
+       <a href="https://magicallibary.net/">HomePage</a>
         <button class="register-btn" onclick="toggleRegisterForm(event)">Registration</button>
         <div class="dropdown">
             <button class="dropbtn">Author's Corner</button>
             <div class="dropdown-content">
-			<a href="Author's Corner.html">Author's Corner</a>
+			<a href="AuthorsCorner.html">Author's Corner</a>
                 <a href="Three from the Forest.html">"Three from the Forest"</a>
                 <a href="Drizzt Do’Urden.html">Drizzt Do’Urden</a>
                 <a href="Sheriff.html">Sheriff</a>
@@ -244,16 +126,18 @@
     
 	
     <!-- Footer navigation bar -->
-     <div class="footer-nav">
-        <a href="Index.html"> <img src="Home.png" width="95" height="55" width="95"></a>
+      <div class="footer-nav">
+        <a href="https://magicallibary.net/">
+  <img src="image/Home.png" width="95" height="55" width="95">
+		</a>
         <a href="http://www.linkedin.com/in/dmytro-kasimov-772a1b281">
-  <img src="Ln.png" width="85" height="45" width="85">
+  <img src="image/Ln.png" width="85" height="45" width="85">
 </a>
         <a href="http://www.facebook.com/profile.php?id=100083754332377">
-  <img src="Face.png" width="55" height="55" width="55">
+  <img src="image/Face.png" width="55" height="55" width="55">
 </a>
         <a href="http://www.instagram.com/white.lord.7?gsh=ZTBpZ3lqNjRqdGtx">
-  <img src="Inst.png" width="55" height="55" width="55">
+  <img src="image/Inst.png" width="55" height="55" width="55">
 </a>
     </div>
   <script>
@@ -293,3 +177,4 @@
 </body>
 
 </html>
+
