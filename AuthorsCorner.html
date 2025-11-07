@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="CSS/main.css">
+	<link rel="stylesheet" href="CSS/Author's Corner.css">
     <title></title>
    
 </head>
@@ -127,8 +128,13 @@ At the moment, 40 books have been written, the last of which was published in Au
 </a>
     </div>
   <script>
-
-  
+        document.addEventListener("click", function(event) {
+            let form = document.getElementById("register");
+            let isRegisterBtn = event.target.classList.contains("register-btn");
+            if (!form.contains(event.target) && !isRegisterBtn) {
+                form.style.display = "none";
+            }
+        });
         function toggleRegisterForm(event) {
             event.stopPropagation();
             let form = document.getElementById("register");
@@ -157,9 +163,6 @@ At the moment, 40 books have been written, the last of which was published in Au
     </script>
 </body>
 </html>
-
-
-
 
 
 
