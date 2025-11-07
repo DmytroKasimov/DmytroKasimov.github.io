@@ -7,9 +7,9 @@ body {
             text-align: center;
 			background-repeat: no-repeat;
         }
-body.authors { background: url(image/Fon2.jpg);}
-body.home { background: url(image/fon1.jpg); }
-body.details {  background: url(image/28546.jpg); }
+body.authors { background: url(../image/Fon2.jpg);}
+body.home { background: url(../image/fon1.jpg); }
+body.details {  background: url(../image/28546.jpg); }
 			
 .navbar {
             background: transparent;
