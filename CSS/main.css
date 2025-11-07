@@ -22,7 +22,7 @@ body.Library{  background: url(../image/FonL.jpg)  no-repeat center center fixed
 body.Sherif{  background: url(../image/Fon2.jpg) no-repeat center center fixed;
     background-size: cover;
 			}
-body.Three{  background: url(Fon2.jpg) no-repeat center center fixed;
+body.Three{  background: url(../image/Fon2.jpg) no-repeat center center fixed;
     background-size: cover;
 			}
 body.Useful{ background: url(image/Dev.jpg)  no-repeat center center fixed;
