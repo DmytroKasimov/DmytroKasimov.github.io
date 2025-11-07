@@ -36,58 +36,6 @@ body.Read{  background: url(../image/321.jpg) no-repeat center center fixed;
 			}
 
 
-body {
-         
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-			background-repeat: no-repeat;
-        }
-
-			
-.navbar {
-            background: transparent;
-            overflow: visible;
-            display: flex;
-body.Authors { background: url(../image/Fon2.jpg) no-repeat center center fixed;
-    background-size: cover;}
-body.Home { background: url(../image/fon1.jpg) no-repeat center center fixed;
-    background-size: cover;
-		  }
-body.Details {  background: url(../image/28546.jpg) no-repeat center center fixed;
-    background-size: cover;
-			 }
-body.Forum {
-            background: url(../image/fon-knigi-42.jpg) no-repeat center center fixed;
-    background-size: cover;
-        }
-body.Develop{background: url(../image/Dev.jpg) no-repeat center center fixed;
-    background-size: cover;
-        }
-body.Links{ background: url(../image/fon2.webp)  no-repeat center center fixed;
-    background-size: cover;
-		  }
-body.Library{  background: url(../image/FonL.jpg)  no-repeat center center fixed;
-    background-size: cover;
-			}
-body.Sherif{  background: url(../image/Fon2.jpg) no-repeat center center fixed;
-    background-size: cover;
-			}
-body.Three{  background: url(../image/Fon2.jpg) no-repeat center center fixed;
-    background-size: cover;
-			}
-body.Useful{ background: url(../image/Dev.jpg)  no-repeat center center fixed;
-    background-size: cover;
-			}
-body.Buy{ background: url(../image/321.jpg) no-repeat center center fixed;
-    background-size: cover;
-			}
-body.Read{  background: url(../image/321.jpg) no-repeat center center fixed;
-    background-size: cover;
-			}
-
 
 body {
          
@@ -105,10 +53,6 @@ body {
             overflow: visible;
             display: flex
 	
-ustify-content: space-between; 
-  align-items: center;
-  flex-wrap: wrap;
- 
             justify-content: center;
             padding: 10px;
             position: fixed;
