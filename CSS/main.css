@@ -1,6 +1,10 @@
 body.Authors { background: url(../image/Fon2.jpg);}
-body.Home { background: url(../image/fon1.jpg); }
-body.Details {  background: url(../image/28546.jpg); }
+body.Home { background: url(../image/fon1.jpg) no-repeat center center fixed;
+    background-size: cover;
+		  }
+body.Details {  background: url(../image/28546.jpg) no-repeat center center fixed;
+    background-size: cover;
+			 }
 
 body {
          
