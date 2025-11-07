@@ -80,32 +80,18 @@ At the moment, 40 books have been written, the last of which was published in Au
       let parentDropdown = this.parentElement;
       parentDropdown.classList.toggle('active');
 
-      document.querySelectorAll('.dropdown').forEach(dropdown => {
-        if (dropdown !== parentDropdown) {
-          dropdown.classList.remove('active');
-        }
-      });
-    });
-  });
-
-  // Закриття dropdown при кліку поза ним
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('.dropdown')) {
-      document.querySelectorAll('.dropdown').forEach(dropdown => {
-        dropdown.classList.remove('active');
-      });
-    }
-  });
-
+       document.addEventListener("click", function(event) {
+            let form = document.getElementById("register");
+            let isRegisterBtn = event.target.classList.contains("register-btn");
+            if (!form.contains(event.target) && !isRegisterBtn) {
+                form.style.display = "none";
+            }
+        });
         function toggleRegisterForm(event) {
             event.stopPropagation();
             let form = document.getElementById("register");
             form.style.display = (form.style.display === "block") ? "none" : "block";
-	
         }
-
-	 
-	  
         document.querySelectorAll('.dropbtn').forEach(button => {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -119,7 +105,6 @@ At the moment, 40 books have been written, the last of which was published in Au
                 });
             });
         });
-	  
         document.addEventListener('click', function(event) {
             if (!event.target.closest('.dropdown')) {
                 document.querySelectorAll('.dropdown').forEach(dropdown => {
@@ -127,12 +112,11 @@ At the moment, 40 books have been written, the last of which was published in Au
                 });
             }
         });
-
-
 	  
     </script>
 </body>
 </html>
+
 
 
 
