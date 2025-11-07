@@ -7,6 +7,8 @@ body {
             text-align: center;
 			background-repeat: no-repeat;
         }
+body.authors { background: url(image/Fon2.jpg);
+			 }
 .navbar {
             background: transparent;
             overflow: visible;
