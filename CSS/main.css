@@ -181,6 +181,7 @@ ustify-content: space-between;
             display: flex;
             justify-content: center;
             z-index: 1001;
+  			align-items: center;
         }
         .footer-nav a {
             color: white;
