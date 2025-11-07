@@ -44,17 +44,12 @@
     <!-- Footer navigation bar -->
      <div id="footer"></div>
   <script
-	  fetch('navbar.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('navbar').innerHTML = data;
-  });
-
-	  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
+	Promise.all([
+  fetch('navbar.html').then(res => res.text()),
+  fetch('footer.html').then(res => res.text())
+]).then(([navbarData, footerData]) => {
+  document.getElementById('navbar').innerHTML = navbarData;
+  document.getElementById('footer').innerHTML = footerData;
         document.addEventListener("click", function(event) {
             let form = document.getElementById("register");
             let isRegisterBtn = event.target.classList.contains("register-btn");
@@ -115,5 +110,6 @@
 </body>
 
 </html>
+
 
 
