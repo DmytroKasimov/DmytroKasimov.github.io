@@ -72,17 +72,7 @@ At the moment, 40 books have been written, the last of which was published in Au
   <div id="footer"></div>
     
   <script>
-	   fetch('navbar.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('navbar').innerHTML = data;
-  });
-
-	  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
+	   
         document.addEventListener("click", function(event) {
             let form = document.getElementById("register");
             let isRegisterBtn = event.target.classList.contains("register-btn");
@@ -94,7 +84,21 @@ At the moment, 40 books have been written, the last of which was published in Au
             event.stopPropagation();
             let form = document.getElementById("register");
             form.style.display = (form.style.display === "block") ? "none" : "block";
+	
         }
+
+	  fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar').innerHTML = data;
+  });
+
+	  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+	  
         document.querySelectorAll('.dropbtn').forEach(button => {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -122,6 +126,7 @@ At the moment, 40 books have been written, the last of which was published in Au
     </script>
 </body>
 </html>
+
 
 
 
