@@ -1,4 +1,5 @@
-body.Authors { background: url(../image/Fon2.jpg);}
+body.Authors { background: url(../image/Fon2.jpg) no-repeat center center fixed;
+    background-size: cover;}
 body.Home { background: url(../image/fon1.jpg) no-repeat center center fixed;
     background-size: cover;
 		  }
