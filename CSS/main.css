@@ -180,3 +180,50 @@ body {
         .message strong {
             color: #333;
         }
+
+ 
+        .book-table {
+            width: 80%;
+            margin: 20px auto;
+			 border-spacing: 0;
+            linear-gradient: transparent;
+            background-color: transparent;
+        }
+        .book-table th, .book-table td {
+            padding: 10px;
+            border: 1px solid transparent;
+			
+        }
+        .book-container {
+            position: relative;
+            display: inline-block;
+        }
+        .book-info {
+            display: none;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 200px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2000;
+        }
+        .book-container:hover .book-info {
+            display: block;
+        }
+		  .tab { 
+  tab-size: 10; 
+}
+
+        .editable {
+            cursor: pointer;
+        }
+        .editing {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .book-image {
+            max-width: 100px;
+            max-height: 100px;
