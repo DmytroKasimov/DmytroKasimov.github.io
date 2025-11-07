@@ -128,6 +128,12 @@ At the moment, 40 books have been written, the last of which was published in Au
 </a>
     </div>
   <script>
+	  Promise.all([
+  fetch('navbar.html').then(res => res.text()),
+  fetch('footer.html').then(res => res.text())
+]).then(([navbarData, footerData]) => {
+  document.getElementById('navbar').innerHTML = navbarData;
+  document.getElementById('footer').innerHTML = footerData;
         document.addEventListener("click", function(event) {
             let form = document.getElementById("register");
             let isRegisterBtn = event.target.classList.contains("register-btn");
@@ -163,6 +169,7 @@ At the moment, 40 books have been written, the last of which was published in Au
     </script>
 </body>
 </html>
+
 
 
 
