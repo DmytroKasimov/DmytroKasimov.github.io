@@ -7,9 +7,34 @@ body.Details {  background: url(../image/28546.jpg) no-repeat center center fixe
     background-size: cover;
 			 }
 body.Forum {
-            background: url(image/fon-knigi-42.jpg) no-repeat center center fixed;
+            background: url(../image/fon-knigi-42.jpg) no-repeat center center fixed;
     background-size: cover;
         }
+body.Debelop{background: url(../image/Dev.jpg) no-repeat center center fixed;
+    background-size: cover;
+        }
+body.Links{ background: url(../image/fon2.webp)  no-repeat center center fixed;
+    background-size: cover;
+		  }
+body.Library{  background: url(../image/FonL.jpg)  no-repeat center center fixed;
+    background-size: cover;
+			}
+body.Sherif{  background: url(../image/Fon2.jpg) no-repeat center center fixed;
+    background-size: cover;
+			}
+body.Three{  background: url(Fon2.jpg) no-repeat center center fixed;
+    background-size: cover;
+			}
+body.Useful{ background: url(image/Dev.jpg)  no-repeat center center fixed;
+    background-size: cover;
+			}
+body.Buy{ background: url(image/321.jpg) no-repeat center center fixed;
+    background-size: cover;
+			}
+body.Read{  background: url(image/321.jpg) no-repeat center center fixed;
+    background-size: cover;
+			}
+
 
 body {
          
